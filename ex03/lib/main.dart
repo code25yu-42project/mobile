@@ -213,7 +213,7 @@ class _HomePageState extends State<HomePage> {
         if (exp.text.isNotEmpty) {
           String lastChar = exp.text[exp.text.length - 1];
           if (lastChar == '(' && value.contains(RegExp(r'[+\-*/%]'))) {
-            showCustomPopup(context, '유효하지 않은 수식입니다');
+            showCustomPopup(context, '正しくない数式です。');
             return;
           }
         }
@@ -308,7 +308,7 @@ class _HomePageState extends State<HomePage> {
       final result = evaluateExpression(expression);
       if (result.isInfinite || result.isNaN) {
         res.text = '';
-        showCustomPopup(context, '유효하지 않은 수식입니다');
+        showCustomPopup(context, '正しくない数式です。');
         return;
       }
 
@@ -360,7 +360,7 @@ class _HomePageState extends State<HomePage> {
 
   void onEqualPressed() {
     if (res.text.isEmpty) {
-      showCustomPopup(context, '유효하지 않은 수식입니다');
+      showCustomPopup(context, '正しくない数式です。');
       return;
     }
     // 1. 결과가 비어있지 않을 때만 히스토리에 추가
@@ -382,6 +382,15 @@ class _HomePageState extends State<HomePage> {
 @override
 Widget build(BuildContext context) {
   return Scaffold(
+    appBar: AppBar(
+      title: const Text(
+        'Calculator',
+        style: TextStyle(color: Colors.white),
+      ),
+      backgroundColor: Colors.black,
+      elevation: 0,
+    ),
+  
     backgroundColor: Colors.black,
     body: SafeArea(
       child: SingleChildScrollView(
