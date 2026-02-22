@@ -1,93 +1,207 @@
 "This repository is a record of my personal learning journey. In line with 42's academic integrity policy, please use this for inspiration rather than direct submission. Let's learn and grow together!"
 
-# 모바일
-간단한 설명
+# Mobile Module 00 - Flutter 기초
 
-이 저장소는 42 모바일 과제(Flutter) 모음입니다. 각 서브디렉토리(`ex00`, `ex01`, `ex03` 등)는 독립적인 Flutter 예제/과제 프로젝트이며, 각 프로젝트의 진입점은 보통 `lib/main.dart`입니다.
+## 📚 목차
 
-**프로젝트 목록**
-- **ex00**: 기본 Flutter 템플릿 애플리케이션
-- **ex01**: 과제 및 실습용 Flutter 앱
-- **ex03**: 추가 실습용 Flutter 앱 (일부 파일이 생략되어 있을 수 있음)
+- [한국어](#한국어)
+- [日本語](#日本語)
+- [English](#English)
 
-각 `exNN` 폴더는 독립적으로 실행할 수 있는 Flutter 프로젝트입니다. 실제 저장소에는 `android/`, `ios/`, `macos/`, `linux/`, `web/`, `windows/` 플랫폼 폴더와 `pubspec.yaml`, `lib/main.dart`, `test/widget_test.dart` 등이 포함되어 있습니다.
+---
 
-**빠른 시작**
-- Flutter가 설치되어 있는지 확인: `flutter --version`
-- 사용 가능한 기기 확인: `flutter devices`
-- 예제 실행 (예: `ex00`):
+## 한국어
 
-```
-cd ex00
-flutter pub get
-flutter run -d <device-id>
-```
+### 📖 개요
 
-또는 VS Code / Android Studio에서 해당 `exNN` 폴더를 열어 실행하세요.
+Mobile Module 00은 Flutter를 사용한 모바일 앱 개발의 기초를 학습하는 모듈입니다. 각 exercise는 점진적으로 복잡도가 증가하며, Flutter의 핵심 개념들을 실습합니다.
 
-테스트 실행:
+### 📁 Exercise 구성
 
-```
-cd ex00
-flutter test
-```
+#### **ex00: 기본 Flutter 앱**
+- **주제**: Flutter 프로젝트 생성 및 기본 구조 이해
+- **학습 내용**:
+  - MaterialApp 및 Scaffold 위젯의 기본 사용법
+  - StatelessWidget 구현
+  - FloatingActionButton과 ElevatedButton 클릭 이벤트
+  - 기본 레이아웃 구성 (AppBar, Body, Center, Column)
 
-**플랫폼 별 주의사항**
-- Android: Android SDK 및 적절한 에뮬레이터/기기 필요
-- iOS / macOS: Xcode와 시뮬레이터 필요 (macOS에서만 가능)
-- Web: Chrome 등 브라우저에서 실행 가능 (`flutter run -d chrome`)
+#### **ex01: 상태 관리 (State Management)**
+- **주제**: StatefulWidget을 사용한 동적 UI 업데이트
+- **학습 내용**:
+  - StatefulWidget과 State 클래스 이해
+  - setState() 함수를 통한 상태 업데이트
+  - 삼항 연산자를 활용한 조건부 렌더링
+  - Widget 클릭 이벤트에 따른 UI 변경
 
-**기여 및 변경**
-- 각 `exNN` 폴더는 독립적이므로 변경 시 해당 폴더만 수정하십시오.
+#### **ex02: 계산기 UI 레이아웃**
+- **주제**: 복잡한 레이아웃 설계 및 구현
+- **학습 내용**:
+  - GridView를 사용한 다중 버튼 배치
+  - 다양한 스타일의 버튼 설계
+  - TextEditingController를 사용한 입력 필드 관리
+  - 계산기 버튼 모델 설계 (ButtonType, ButtonStyle Enum)
 
-**라이선스**
-- 저장소 루트의 `LICENSE` 파일을 확인하세요.
+#### **ex03: 계산기 기능 구현**
+- **주제**: math_expressions 라이브러리를 사용한 실제 계산 구현
+- **학습 내용**:
+  - 외부 라이브러리 의존성 관리
+  - 문자열 표현식 파싱 및 계산
+  - 계산 이력 저장 및 표시
+  - 과학 계산기 모드 추가 기능
 
-질문이나 추가로 포함했으면 하는 내용(예: 각 과제별 목표, 스크린샷, 요구사항)이 있으면 알려주세요.
+### 🚀 시작하기
 
+#### 요구사항
+- Flutter 3.10.8 이상
+- Dart 3.10.8 이상
+- iOS, Android, Web, Linux, macOS, Windows 플랫폼 지원
 
-# mobile
+#### 각 Exercise 실행 방법
 
-Short description
-
-This repository contains 42 Mobile assignments and practice projects built with Flutter. Each subdirectory (`ex00`, `ex01`, `ex03`, etc.) is an independent Flutter example/assignment project. The typical entry point for each project is `lib/main.dart`.
-
-**Project list**
-- **ex00**: Basic Flutter template application
-- **ex01**: Assignment / practice Flutter app
-- **ex03**: Additional practice Flutter app (some files may be omitted)
-
-Each `exNN` folder is a standalone Flutter project and usually includes platform folders such as `android/`, `ios/`, `macos/`, `linux/`, `web/`, and `windows/`, as well as `pubspec.yaml`, `lib/main.dart`, and `test/widget_test.dart`.
-
-**Quick start**
-- Verify Flutter is installed: `flutter --version`
-- List available devices: `flutter devices`
-- Run an example (for example `ex00`):
-
-```
-cd ex00
-flutter pub get
-flutter run -d <device-id>
+```bash
+cd ex00    # 원하는 exercise 폴더로 이동
+flutter pub get    # 의존성 설치
+flutter run    # 앱 실행
 ```
 
-Or open the `exNN` folder in VS Code or Android Studio and run from the IDE.
+### 📚 학습 목표
 
-Run tests:
+1. **ex00**: Flutter 앱의 기본 구조와 생명주기 이해
+2. **ex01**: 상태 관리의 중요성 학습
+3. **ex02**: 복잡한 UI 레이아웃 구성 능력 습득
+4. **ex03**: 실무 프로젝트의 기능 구현 능력 개발
 
+---
+
+## 日本語
+
+### 📖 概要
+
+Mobile Module 00は、Flutterを使用したモバイルアプリ開発の基礎を学ぶモジュールです。各exerciseは段階的に複雑性が増し、Flutterの重要な概念を実践します。
+
+### 📁 Exercise構成
+
+#### **ex00: 基本的なFlutterアプリ**
+- **テーマ**: Flutterプロジェクト作成と基本構造の理解
+- **学習内容**:
+  - MaterialAppとScaffoldウィジェットの基本的な使用方法
+  - StatelessWidgetの実装
+  - FloatingActionButtonとElevatedButtonのクリックイベント
+  - 基本的なレイアウト構成（AppBar、Body、Center、Column）
+
+#### **ex01: 状態管理（State Management）**
+- **テーマ**: StatefulWidgetを使用した動的UI更新
+- **学習内容**:
+  - StatefulWidgetとStateクラスの理解
+  - setState()関数による状態更新
+  - 三項演算子を使用した条件付きレンダリング
+  - ウィジェットクリックイベントに応じたUI変更
+
+#### **ex02: 電卓UIレイアウト**
+- **テーマ**: 複雑なレイアウト設計と実装
+- **学習内容**:
+  - GridViewを使用した複数ボタンの配置
+  - さまざまなスタイルのボタン設計
+  - TextEditingControllerを使用した入力フィールド管理
+  - 電卓ボタンモデル設計（ButtonType、ButtonStyle Enum）
+
+#### **ex03: 電卓機能の実装**
+- **テーマ**: math_expressionsライブラリを使用した実際の計算実装
+- **学習内容**:
+  - 外部ライブラリの依存性管理
+  - 文字列式のパースと計算
+  - 計算履歴の保存と表示
+  - 科学計算機モード追加機能
+
+### 🚀 はじめに
+
+#### 要件
+- Flutter 3.10.8以上
+- Dart 3.10.8以上
+- iOS、Android、Web、Linux、macOS、Windows プラットフォーム対応
+
+#### 各Exerciseの実行方法
+
+```bash
+cd ex00    # 希望するexerciseフォルダに移動
+flutter pub get    # 依存性をインストール
+flutter run    # アプリを実行
 ```
-cd ex00
-flutter test
+
+### 📚 学習目標
+
+1. **ex00**: Flutterアプリの基本構造とライフサイクルの理解
+2. **ex01**: 状態管理の重要性を学習
+3. **ex02**: 複雑なUIレイアウト構成能力の習得
+4. **ex03**: 実務プロジェクトの機能実装能力の開発
+
+---
+
+## English
+
+### 📖 Overview
+
+Mobile Module 00 is a module for learning the fundamentals of mobile app development using Flutter. Each exercise progressively increases in complexity, covering essential Flutter concepts through hands-on practice.
+
+### 📁 Exercise Structure
+
+#### **ex00: Basic Flutter App**
+- **Topic**: Creating a Flutter project and understanding basic structure
+- **Learning Objectives**:
+  - Basic usage of MaterialApp and Scaffold widgets
+  - Implementation of StatelessWidget
+  - Handling FloatingActionButton and ElevatedButton click events
+  - Basic layout composition (AppBar, Body, Center, Column)
+
+#### **ex01: State Management**
+- **Topic**: Dynamic UI updates using StatefulWidget
+- **Learning Objectives**:
+  - Understanding StatefulWidget and State classes
+  - State updates using setState() function
+  - Conditional rendering with ternary operators
+  - UI changes based on widget click events
+
+#### **ex02: Calculator UI Layout**
+- **Topic**: Complex layout design and implementation
+- **Learning Objectives**:
+  - Multiple button arrangement using GridView
+  - Various button style designs
+  - Input field management using TextEditingController
+  - Calculator button model design (ButtonType, ButtonStyle Enum)
+
+#### **ex03: Calculator Functionality**
+- **Topic**: Actual calculation implementation using math_expressions library
+- **Learning Objectives**:
+  - External library dependency management
+  - String expression parsing and evaluation
+  - Storing and displaying calculation history
+  - Scientific calculator mode features
+
+### 🚀 Getting Started
+
+#### Requirements
+- Flutter 3.10.8 or later
+- Dart 3.10.8 or later
+- Support for iOS, Android, Web, Linux, macOS, Windows platforms
+
+#### Running Each Exercise
+
+```bash
+cd ex00    # Navigate to desired exercise folder
+flutter pub get    # Install dependencies
+flutter run    # Run the app
 ```
 
-**Platform notes**
-- Android: Requires Android SDK and an emulator or device
-- iOS / macOS: Requires Xcode and simulator (macOS only)
-- Web: Can run in a browser (e.g. `flutter run -d chrome`)
+### 📚 Learning Goals
 
-**Contributing / Changes**
-- Each `exNN` folder is independent — modify only the relevant folder when making changes.
+1. **ex00**: Understand Flutter app structure and lifecycle
+2. **ex01**: Learn the importance of state management
+3. **ex02**: Develop complex UI layout composition skills
+4. **ex03**: Build practical project implementation capabilities
 
-**License**
-- See the `LICENSE` file at the repository root.
+---
 
-If you'd like, I can add per-exercise objectives, screenshots, or specific run instructions for any `exNN` folder — tell me which ones to expand.
+## 📝 라이센스 | ライセンス | License
+
+This project is licensed under the terms specified in the [LICENSE](LICENSE) file.
