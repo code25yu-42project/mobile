@@ -1,32 +1,25 @@
-import 'package:flutter/material.dart';
-// Flutter의 기본 머티리얼 UI 위젯을 사용하기 위해 import
+import 'package:flutter/material.dart'; // Flutter의 기본 머티리얼 UI 위젯을 사용하기 위해 import
 
 void main() {
-  runApp(const MyApp());
-  // Flutter 앱 실행, MyApp을 앱의 루트 위젯으로 설정
+  runApp(const MyApp()); // Flutter 앱 실행, MyApp을 앱의 루트 위젯으로 설정
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget { // StatelessWidget: 상태가 없는 위젯 (앱 전체 설정용)
   const MyApp({super.key});
-  // StatelessWidget: 상태가 없는 위젯 (앱 전체 설정용)
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      // MaterialApp: Flutter 앱의 전체 설정을 담당하는 위젯
-      home: HomePage(),
-      // 앱 실행 시 가장 먼저 보여줄 화면
+    return const MaterialApp( // MaterialApp: Flutter 앱의 전체 설정을 담당하는 위젯
+      home: HomePage(), // 앱 실행 시 가장 먼저 보여줄 화면
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-  // StatefulWidget: 상태(state)가 있어 화면 변경 가능
+  const HomePage({super.key}); // StatefulWidget: 상태(state)가 있어 화면 변경 가능
 
   @override
-  State<HomePage> createState() => _HomePageState();
-// HomePage의 상태를 관리하는 State 객체 생성
+  State<HomePage> createState() => _HomePageState(); // HomePage의 상태를 관리하는 State 객체 생성
 }
 
 class _HomePageState extends State<HomePage> {
@@ -36,39 +29,35 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // Scaffold: 화면의 기본 구조(appBar, body 등 제공)
+    return Scaffold( // Scaffold: 화면의 기본 구조(appBar, body 등 제공)
 
-      body: Center(
-        // 화면 중앙에 배치하는 위젯
+      body: Center( // 화면 중앙에 배치하는 위젯
 
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          // 세로축 기준으로 가운데 정렬
+          mainAxisAlignment: MainAxisAlignment.center, // 세로축 기준으로 가운데 정렬
 
           children: [
             Text(
-              isHello ? 'Hello World' : 'Hello Flutter',
-              // 삼항 연산자: isHello의 값에 따라 텍스트 변경
+              isHello ? 'Hello World' : 'Hello Flutter', // 삼항 연산자: isHello의 값에 따라 텍스트 변경
               style: const TextStyle(fontSize: 24),
             ),
 
-            const SizedBox(height: 10),
-            // 위 텍스트와 버튼 사이 간격
+            const SizedBox(height: 10), // 위 텍스트와 버튼 사이 간격(여백)
 
             ElevatedButton(
-              onPressed: () {
-                setState(() {
+              onPressed: () { // 버튼 클릭 시 실행되는 함수
+
+                setState(() { // 상태가 변경되었음을 Flutter에 알림 → build()가 다시 호출되면서 UI가 재렌더링됨
+    
                   isHello = !isHello;
-                  // 버튼을 누를 때마다 true/false 토글
+                  // 현재 상태를 반전(toggle): true → false / false → true
+                  // → 텍스트가 번갈아 바뀌는 핵심 로직
                   // setState()를 호출해야 화면이 다시 그려짐
                 });
 
-                debugPrint('Button pressed');
-                // 디버그 콘솔에 로그 출력
+                debugPrint('Button pressed'); // 디버그 콘솔에 로그 출력
               },
-              child: const Text('Button'),
-              // 버튼에 표시되는 텍스트
+              child: const Text('Button'), // 버튼에 표시되는 텍스트
             ),
           ],
         ),
